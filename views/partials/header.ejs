@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <!-- jQuery UI CSS -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        
+        <!-- Bootstrap: CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Bootstrap: Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!-- Font Awesome CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>     
+        <![endif]-->
+        
+        <!-- Modernizr JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+        
+        <!-- jQuery JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+        <!-- TinySort JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.3.6/tinysort.min.js"></script>
+        
+        <!-- Bootstrap JS-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <!-- Something Dorky CSS -->
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Something Dorky | App Template</title>
+        
+    </head>
+    <body>
+        <noscript>
+            <style>
+                .content {
+                    display: none;
+                }
+                header, footer {
+                    opacity: 0.75;
+                }
+            </style>
+            
+            <div class="noscript">
+                <h1>Javascript is not enabled in your browser</h1>
+                <p>This website requires Javascript in order to function</p>
+            </div>
+        </noscript>
+        
+        <nav class="navbar navbar-default navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-menu" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><i class="fa fa-meh-o" aria-hidden="true"></i> Something Dorky | App Template</a>
+                </div>
+                <div class="collapse navbar-collapse" id="top-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                        <% if(!currentUser) { %>
+                            <li><a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                            <li><a href="/register"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a></li>
+                        <% } else { %>
+                            <li><a href="#">Hi, <%= currentUser.username %></a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <% if(error && error.length > 0) { %>
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong><%= error %></strong>
+                </div>
+            <% } %>
+            <% if(success && success.length > 0) { %>
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong><%= success %></strong>
+                </div>
+            <% } %>
+        </div>
+        

@@ -1,0 +1,79 @@
+.dorky { 
+    border-top: 2px dotted #364026;
+}
+
+.dorkywhite { 
+    width: 50%;
+    border-top: 2px solid white;
+    border-bottom: 1px solid rgba(0,0,0,0.2)
+}
+
+.dorkywhitelong {
+    width: 100%;
+    border-top: 2px solid white;
+    border-bottom: 1px solid rgba(0,0,0,0.2)
+}
+
+
+.dorky_panel { 
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.dorky_panel h1 {
+    margin-top: 100px;
+}
+
+.dorky_panel img {
+    display: block;
+    margin: auto;
+}
+
+.dorky_panel a {
+    text-decoration: none;
+    color: #416600;
+}
+
+.dorky_panel a:hover {
+    text-decoration: none;
+    color: #FF7800;
+}
+
+#landing {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 25%;
+    color: #416600;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1)
+}
+
+#landing h1 {
+    font-weight: 700;
+    font-size: 4em;
+}
+
+#landing h1:hover {
+    color: #FF7800;
+}
+
+#landing button {
+    color: #416600;
+}
+
+#landing button:hover {
+    color: #FF7800;
+}
+
+.dorkywhite {
+    color: white;
+}
+
+.dorkygreen {
+    color: #416600;
+}
+
+.dorkyorange {
+    color: #FF7800;
+}
